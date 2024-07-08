@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cojsbwvte3dqb"
-path="res://.godot/imported/tilemap-characters.png-e39241d56e57340689ffe33b9ed06fe2.ctex"
+uid="uid://02p1je6xgymq"
+path="res://.godot/imported/tile_0006.png-a0c31fcefd2bb7b2c4aedf58ef4206f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character/tilemap-characters.png"
-dest_files=["res://.godot/imported/tilemap-characters.png-e39241d56e57340689ffe33b9ed06fe2.ctex"]
+source_file="res://assets/character/tile_0006.png"
+dest_files=["res://.godot/imported/tile_0006.png-a0c31fcefd2bb7b2c4aedf58ef4206f4.ctex"]
 
 [params]
 
