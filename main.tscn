@@ -1,14 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1ns3ic3e0nju"]
 
 [ext_resource type="PackedScene" uid="uid://c8m8ulwjdf5q6" path="res://Personaje/personaje.tscn" id="1_hm3wy"]
-
-[sub_resource type="TileSet" id="TileSet_ru2pt"]
+[ext_resource type="PackedScene" uid="uid://dii5u6ynu4npg" path="res://scenes/TileMap.tscn" id="2_wdbcw"]
 
 [node name="Main" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_ru2pt")
-format = 2
-
 [node name="Personaje" parent="." instance=ExtResource("1_hm3wy")]
 position = Vector2(10, -10)
+
+[node name="TileMap" parent="." instance=ExtResource("2_wdbcw")]
