@@ -60,6 +60,7 @@ _data = {
 }
 
 [node name="Personaje" type="Node2D"]
+scale = Vector2(0.318879, 0.318879)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 script = ExtResource("1_sv11f")
@@ -78,3 +79,4 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(2, 2)

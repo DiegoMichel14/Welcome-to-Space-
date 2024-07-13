@@ -6,6 +6,6 @@
 [node name="Main" type="Node2D"]
 
 [node name="Personaje" parent="." instance=ExtResource("1_hm3wy")]
-position = Vector2(10, -10)
+position = Vector2(400, 296)
 
 [node name="TileMap" parent="." instance=ExtResource("2_wdbcw")]
