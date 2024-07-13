@@ -141,7 +141,7 @@ extends CharacterBody2D
 
 # Constantes
 const GRAVITY = 600
-const JUMP_FORCE = 600
+const JUMP_FORCE = 400
 const MOVE_SPEED = 200
 const MAX_JUMP_CHARGE = 1.5  # tiempo máximo de carga en segundos
 
