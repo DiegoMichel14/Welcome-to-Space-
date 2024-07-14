@@ -124,7 +124,7 @@ zoom = Vector2(2, 2)
 
 [node name="Caminar" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
 stream = ExtResource("6_nn3uu")
-volume_db = -7.283
+volume_db = -10.0
 pitch_scale = 1.78
 
 [node name="Saltar" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
