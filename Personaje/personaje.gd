@@ -210,7 +210,7 @@ func _physics_process(delta):
 	# Mantener la dirección durante las animaciones en el aire
 	if is_jumping or is_falling or is_charging_jump:
 		sprite_2d.scale.x = last_direction
-
+	
 	move_and_slide()
 
 func apply_gravity(delta):
