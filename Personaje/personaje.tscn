@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://c8m8ulwjdf5q6"]
+[gd_scene load_steps=16 format=3 uid="uid://c8m8ulwjdf5q6"]
 
 [ext_resource type="Texture2D" uid="uid://ba17c6e2b1w5u" path="res://assets/MainCharacter/platformChar_idle.png" id="1_4rest"]
 [ext_resource type="Script" path="res://Personaje/personaje.gd" id="1_sv11f"]
 [ext_resource type="Texture2D" uid="uid://bel5ehdmgkxi3" path="res://assets/MainCharacter/platformChar_walk1.png" id="3_tsy1f"]
 [ext_resource type="Texture2D" uid="uid://cvay8g2km6wtj" path="res://assets/MainCharacter/platformChar_walk2.png" id="4_lsyxf"]
 [ext_resource type="Texture2D" uid="uid://dvgpgda7cyn05" path="res://assets/MainCharacter/platformChar_duck.png" id="5_uxlg4"]
+[ext_resource type="AudioStream" uid="uid://depfvi1lxtvms" path="res://assets/Audio/Caminar.mp3" id="6_nn3uu"]
+[ext_resource type="AudioStream" uid="uid://cbxt6vigwysvo" path="res://assets/Audio/Saltar.mp3" id="7_xkp3l"]
+[ext_resource type="AudioStream" uid="uid://dlvmmc7m6t62" path="res://assets/Audio/Golpe.mp3" id="8_lig0x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8k8p"]
 size = Vector2(51.5, 64.25)
@@ -118,3 +121,15 @@ libraries = {
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 zoom = Vector2(2, 2)
+
+[node name="Caminar" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+stream = ExtResource("6_nn3uu")
+volume_db = -7.283
+pitch_scale = 1.78
+
+[node name="Saltar" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+stream = ExtResource("7_xkp3l")
+volume_db = -7.283
+
+[node name="Golpe" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+stream = ExtResource("8_lig0x")

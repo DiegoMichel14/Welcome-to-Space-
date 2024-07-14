@@ -149,9 +149,13 @@ const MAX_JUMP_CHARGE = 1.5  # tiempo máximo de carga en segundos
 var jump_charge_time = 0.0
 var is_charging_jump = false
 var on_ground = false
+var has_collided = false  # Nueva bandera para manejar la colisión
 
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
+@onready var caminar_audio = $Caminar  # Referencia al nodo de audio para caminar
+@onready var saltar_audio = $Saltar  # Referencia al nodo de audio para saltar
+@onready var golpe_audio = $Golpe  # Referencia al nodo de audio para golpe
 
 # Estados para regular animaciones
 var is_jumping = false
@@ -192,6 +196,7 @@ func _physics_process(delta):
 		if not is_jumping and not is_falling:
 			if not jump_animation_finished:
 				animation_player.play("soltar")
+				saltar_audio.play()  # Reproducir el audio de salto
 				jump_animation_finished = true
 			is_falling = true
 	else:
@@ -204,14 +209,32 @@ func _physics_process(delta):
 			animation_player.play("caminar")
 			sprite_2d.scale.x = sign(velocity.x)
 			last_direction = sign(velocity.x)  # Actualizar la dirección
+
+			# Reproducir el audio de caminar si no se está reproduciendo
+			if not caminar_audio.playing:
+				caminar_audio.play()
 		elif not is_charging_jump:
 			animation_player.play("reposo")
+			caminar_audio.stop()  # Detener el audio de caminar cuando no se mueve
+
+		# Resetear la bandera de colisión al estar en el suelo
+		has_collided = false
+
+	# Detener el audio de caminar si no está en el suelo
+	if not on_ground:
+		caminar_audio.stop()
 
 	# Mantener la dirección durante las animaciones en el aire
 	if is_jumping or is_falling or is_charging_jump:
 		sprite_2d.scale.x = last_direction
-	
+
+	# Mover y detectar colisiones
 	move_and_slide()
+
+	# Reproducir el sonido de golpe si la velocidad en x es cero mientras está en el aire y no ha colisionado antes
+	if not on_ground and velocity.x == 0 and not has_collided:
+		golpe_audio.play()
+		has_collided = true
 
 func apply_gravity(delta):
 	velocity.y += GRAVITY * delta
@@ -237,8 +260,6 @@ func handle_movement(delta):
 func jump():
 	var jump_strength = JUMP_FORCE * min(jump_charge_time / MAX_JUMP_CHARGE, 1.0)
 	velocity.y = -jump_strength
-
-
 
 
 
