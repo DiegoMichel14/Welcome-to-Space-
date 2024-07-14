@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="Welcome_To_Space"
-run/main_scene="res://main.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0.0705882, 0.145098, 0.301961, 1)
+boot_splash/image="res://assets/BootScreen/logo_transparent.png"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=3000
 
 [display]
 
