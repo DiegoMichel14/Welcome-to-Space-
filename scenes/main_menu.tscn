@@ -98,10 +98,3 @@ layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_p8pen")
 theme_override_font_sizes/font_size = 24
 text = "Start Game"
-
-[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(120, 32)
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_p8pen")
-theme_override_font_sizes/font_size = 24
-text = "Exit "

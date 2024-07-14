@@ -9,13 +9,9 @@ extends Control
 
 func _ready():
 	start_buton.button_down.connect(on_start_pressed)
-	exit_buton.button_down.connect(on_exit_pressed)
 	
 	
 func on_start_pressed() -> void:
 	get_tree().change_scene_to_packed(start_level)
 	
-
-func on_exit_pressed() -> void:
-	get_tree().quit()
 	
